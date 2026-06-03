@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "cola.h"
+#include "colaPri.h"
 #include "estructuras.h"
 #include "lista.h"
 
@@ -20,10 +21,14 @@ class Hospital {
   int maxCamas; // Capacidad máxima de pacientes ingresados (mínimo 5).
   lista pacientesIngresados; // Lista de pacientes ingresados ordenados por id
                              // ASC.
-  cola pacientesEnEspera; // Cola de prioridad de pacientes por gravedad DESC.
-  cadena estado;          // Estado actual del hospital, valores posibles:
-                          // "ACTIVO"; "SIN SANGRE"; "INACTIVO".
-  cadena tipoHospital;    // Tipo de hospital, valores posibles:
+  colapri
+      pacientesEnEspera; // Cola de prioridad de pacientes por gravedad DESC.
+  cadena estado;         // Estado actual del hospital, valores posibles:
+                         // "ACTIVO"; "SIN SANGRE"; "INACTIVO".
+  cadena tipoHospital;   // Tipo de hospital, valores posibles:
+  void vaciarEspera();
+  void vaciarIngresados();
+
 public:
   ~Hospital();
   Hospital(cadena nom, int id, int mC, int cP, cadena tH);
@@ -91,5 +96,3 @@ public:
   // ingresados.
 };
 #endif
-11;
-rgb : 2626 / 2626 / 2626
